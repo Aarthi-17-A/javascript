@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .box {
+      width: 200px; height: 100px;
+      background: lightgray; 
+      display: flex; justify-content: center; align-items: center;
+      margin-bottom: 20px; cursor: pointer;
+      border-radius: 8px;
+    }
+    input { padding: 8px; margin-top: 10px; width: 200px; }
+  </style>
+
+</head>
+<body>
+     <!-- Click -->
+  <button id="clickBtn">Click Me</button>
+  <p id="clickOutput"></p>
+
+  <!-- Mouseover / Mouseout -->
+  <div class="box" id="hoverBox">Hover here</div>
+  <p id="hoverOutput"></p>
+
+  <!-- Double Click -->
+  <div class="box" id="dblBox">Double Click Me</div>
+  <p id="dblOutput"></p>
+
+  <!-- Keydown -->
+  <input id="keyInput" placeholder="Type something">
+  <p id="keyOutput"></p>
+
+    <script>
+
+    // 1. Click Event
+    let clickBtn = document.getElementById("clickBtn");
+    let clickOutput = document.getElementById("clickOutput");
+
+    clickBtn.addEventListener("click", function() {
+      clickOutput.innerText = "Button was clicked!";
+    });
+
+        // 2. Mouseover & Mouseout Event
+    let hoverBox = document.getElementById("hoverBox");
+    let hoverOutput = document.getElementById("hoverOutput");
+
+    hoverBox.addEventListener("mouseover", function() {
+      hoverBox.style.backgroundColor = "lightblue";
+      hoverOutput.innerText = "Mouse is over the box!";
+    });
+    
+    hoverBox.addEventListener("mouseout", function() {
+      hoverBox.style.backgroundColor = "lightgray";
+      hoverOutput.innerText = "Mouse left the box!";
+    });
+   
+        // 3. Double Click Event
+    let dblBox = document.getElementById("dblBox");
+    let dblOutput = document.getElementById("dblOutput");
+
+    dblBox.addEventListener("dblclick", function() {
+      dblBox.style.backgroundColor = "yellow";
+      dblOutput.innerText = "Box was double-clicked!";
+    });
+
+    // 4. Keydown Event
+    let keyInput = document.getElementById("keyInput");
+    let keyOutput = document.getElementById("keyOutput");
+
+    keyInput.addEventListener("keydown", function(event) {
+      keyOutput.innerText = "You pressed: " + event.key;
+    });
+
+    </script>
+
+</body>
+</html>

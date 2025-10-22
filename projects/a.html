@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1 id="title">Hello</h1>
+  <button id="btn">Click Me</button>
+
+  <script>
+    let heading = document.getElementById("title");  // select element
+    let button = document.getElementById("btn");
+
+    button.addEventListener("click", function() {
+      heading.innerText = "You clicked me!";
+      heading.style.color = "red";  // change style
+    });
+  </script>
+</body>
+</html>
