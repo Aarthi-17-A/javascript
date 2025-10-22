@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ClassList Example</title>
+  <style>
+    .highlight {
+      color: white;
+      background-color: blue;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="heading">Hello World</h1>
+  <button id="addBtn">Add Highlight</button>
+  <button id="removeBtn">Remove Highlight</button>
+  <button id="toggleBtn">Toggle Highlight</button>
+
+  <script>
+    let heading = document.getElementById("heading");
+    document.getElementById("addBtn").addEventListener("click", () => {
+      heading.classList.add("highlight");
+    });
+
+    document.getElementById("removeBtn").addEventListener("click", () => {
+      heading.classList.remove("highlight");
+    });
+
+    document.getElementById("toggleBtn").addEventListener("click", () => {
+      heading.classList.toggle("highlight");
+    });
+  </script>
+</body>
+</html>
